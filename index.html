@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Shine Event Decor</title>
+  <!-- Bootstrap 5 CSS Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts for Luxury Look -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #ffd700;
+      --gold-dark: #d4af37;
+      --silver: #e2e8f0;
+      --green: #10b981;
+      --sky: #38bdf8;
+      --purple: #8b5cf6;
+      --purple-deep: #2e1065;
+      --bg-dark:  #130c2b; 
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #1e1136, var(--bg-dark) 45%, #071921 100%);
+      color: var(--silver);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, rgba(16, 10, 38, 0.92), rgba(11, 29, 44, 0.92), rgba(29, 13, 56, 0.92)) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 12px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55), 0 2px 15px rgba(139, 92, 246, 0.25);
+      transition: all 0.4s ease;
+    }
+
+    /* Animated 5-Color Bottom Border Line */
+    .navbar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--silver), var(--green), var(--sky), var(--purple), var(--gold));
+      background-size: 300% 100%;
+      animation: navBorderFlow 5s linear infinite;
+    }
+
+    @keyframes navBorderFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    /* Brand Logo & Text */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-ring {
+      padding: 3px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--green), var(--sky), var(--purple));
+      display: inline-flex;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.45);
+      transition: transform 0.6s ease, box-shadow 0.4s ease;
+    }
+
+    .navbar-brand:hover .logo-ring {
+      transform: rotate(360deg) scale(1.08);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.75);
+    }
+
+    .logo-ring img {
+      height: 48px;
+      width: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #0b0719;
+    }
+
+    /* Nav Links Pill Design */
+    .navbar-nav {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.12);
+      border-radius: 50px;
+      padding: 5px 12px;
+      gap: 6px;
+    }
+
+    .nav-link {
+      color: var(--silver) !important;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 18px !important;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.35s ease;
+    }
+
+    .nav-link i {
+      color: var(--gold);
+      font-size: 14px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(16, 185, 129, 0.2), rgba(56, 189, 248, 0.25), rgba(139, 92, 246, 0.25));
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .nav-link:hover i {
+      color: var(--sky);
+      transform: scale(1.2);
+    }
+
+    /* Glowing Book Now Button in Navbar */
+    .nav-book-btn {
+      background: linear-gradient(135deg, var(--gold), var(--green), var(--sky), var(--purple));
+      background-size: 250% auto;
+      color: #ffffff !important;
+      font-weight: 600;
+      padding: 9px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.45);
+      transition: all 0.4s ease;
+    }
+
+    .nav-book-btn:hover {
+      background-position: right center;
+      transform: scale(1.06);
+      box-shadow: 0 0 24px rgba(255, 215, 0, 0.7);
+    }
+    
+
+    /* Multi-color Shimmer Gradient Text (Gold, Silver, Sky, Green, Purple) */
+    .theme-gradient-text {
+      background: linear-gradient(90deg, var(--gold), var(--silver), var(--sky), var(--green), var(--purple), var(--gold));
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerText 6s linear infinite;
+    }
+
+    @keyframes shimmerText {
+      0% { background-position: 0% center; }
+      100% { background-position: 300% center; }
+    }
+
+    /* Navbar Styling & Animations */
+    .navbar {
+      background: rgba(15, 10, 32, 0.85) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+      box-shadow: 0 4px 25px rgba(139, 92, 246, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .navbar-brand img {
+      height: 52px;
+      width: 52px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+      transition: transform 0.5s ease;
+    }
+
+    .navbar-brand:hover img {
+      transform: rotate(360deg) scale(1.08);
+    }
+
+    .nav-link {
+      position: relative;
+      color: var(--silver) !important;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--sky), var(--green), var(--purple));
+      transition: width 0.35s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--gold) !important;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero / About Section */
+    .about-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 6%;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .text-box {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid var(--gold);
+      border-right: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeSlideLeft 1s ease forwards;
+    }
+
+    .text-box p {
+      font-size: 16.5px;
+      color: var(--silver);
+    }
+
+    .image-box {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: flex-end;
+      animation: fadeSlideRight 1s ease forwards;
+    }
+
+    .image-box img {
+      height: 410px;
+      width: 600px;
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 3px solid transparent;
+      background: linear-gradient(#0b0719, #0b0719) padding-box,
+                  linear-gradient(135deg, var(--gold), var(--sky), var(--green), var(--purple)) border-box;
+      box-shadow: 0 12px 35px rgba(56, 189, 248, 0.25), 0 0 25px rgba(255, 215, 0, 0.2);
+      animation: floatImage 5s ease-in-out infinite;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 45px rgba(139, 92, 246, 0.45);
+    }
+
+    @keyframes floatImage {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes fadeSlideLeft {
+      from { opacity: 0; transform: translateX(-35px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeSlideRight {
+      from { opacity: 0; transform: translateX(35px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Section Headings */
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .section-underline {
+      width: 110px;
+      height: 4px;
+      margin: 10px auto 0;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--silver), var(--green), var(--sky), var(--purple));
+    }
+
+    /* Event Cards */
+    .event-card {
+      background: linear-gradient(145deg, rgba(30, 20, 58, 0.9), rgba(13, 27, 42, 0.92)) !important;
+      color: var(--silver) !important;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      border-color: var(--gold);
+      box-shadow: 0 16px 35px rgba(139, 92, 246, 0.35), 0 0 20px rgba(16, 185, 129, 0.25);
+    }
+
+    .event-card .img-wrapper {
+      overflow: hidden;
+      height: 220px;
+    }
+
+    .event-card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .event-card:hover img {
+      transform: scale(1.12);
+    }
+
+    .event-card .card-title {
+      color: var(--gold);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .event-card:hover .card-title {
+      color: var(--sky);
+    }
+
+    .event-card .card-text {
+      color: #cbd5e1 !important;
+      font-size: 14.5px;
+    }
+
+    /* Multi-color Theme Button */
+    .btn-theme {
+      background: linear-gradient(135deg, var(--gold), var(--green), var(--sky), var(--purple));
+      background-size: 250% auto;
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      border-radius: 25px;
+      padding: 8px 22px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      transition: all 0.4s ease;
+    }
+
+    .btn-theme:hover {
+      background-position: right center;
+      transform: scale(1.06);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 60px 20px;
+    }
+
+    .review-card {
+      background: linear-gradient(145deg, rgba(46, 16, 101, 0.45), rgba(16, 185, 129, 0.12));
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      border-radius: 16px;
+      padding: 28px;
+      height: 100%;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--sky);
+      box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25);
+    }
+
+    .review-stars {
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    /* Booking Form Section */
+    .booking-section {
+      padding: 60px 20px;
+    }
+
+    .booking-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(20, 14, 43, 0.92), rgba(11, 34, 43, 0.92));
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      box-shadow: 0 15px 40px rgba(139, 92, 246, 0.25);
+    }
+
+    .form-control, .form-select {
+      background-color: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(226, 232, 240, 0.25);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 12px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus, .form-select:focus {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: var(--sky);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+      color: #ffffff;
+    }
+
+    .form-select option {
+      background-color: #16102e;
+      color: #ffffff;
+    }
+
+    .form-label {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Footer Section */
+    .footer {
+      background: linear-gradient(180deg, #0c081d, #06040f);
+      border-top: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--gold), var(--silver), var(--green), var(--sky), var(--purple)) 1;
+      padding: 50px 20px 30px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .footer img {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      margin-bottom: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    .footer img:hover {
+      transform: scale(1.1) rotate(8deg);
+    }
+
+    .footer-links a {
+      color: var(--silver);
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--sky);
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .social-icons i:hover {
+      transform: translateY(-6px) scale(1.2);
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+    }
+
+    /* Scroll Reveal Utility */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.75s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <!-- Attractive Luxury Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      
+      <!-- Brand Logo + Name -->
+      <a class="navbar-brand theme-gradient-text" href="#home">
+        <span class="logo-ring">
+          <img src="Assests/685566111_18094514231332150_4539418371068601872_n-removebg-preview.png" alt="Gold Shine Logo">
+        </span>
+        Gold Shine Event Decor
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse" data-bs-target="#luxuryNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center Navigation Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="luxuryNavbar">
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#events"><i class="fa-solid fa-wand-magic-sparkles"></i> Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews"><i class="fa-solid fa-star"></i> Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Side CTA Button -->
+      <div class="d-none d-lg-block">
+        <a href="#contact" class="nav-book-btn">
+          <i class="fa-solid fa-calendar-check"></i> Book Now
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- About / Hero Section -->
+  <section id="home" class="about-container">
+    <div class="text-box">
+      <h2 class="theme-gradient-text mb-3">Crafting Magical Celebrations</h2>
+      <p>• At <strong>Gold Shine Event Decor</strong>, we believe every celebration deserves to sparkle. From intimate gatherings to grand receptions, our custom designs blend modern sophistication with classic elegance to leave a lasting impression on you and your guests.</p>
+      <p>• Step into a world of shimmer and style. Whether you are planning a dream wedding, a milestone birthday, or a corporate gala, Gold Shine Event Decor curates breathtaking themes tailored to your exact vision.</p>
+      <a href="#contact" class="btn btn-theme mt-2">Book Your Event Now</a>
+    </div>
+
+    <div class="image-box">
+      <img src="Assests/hero section.jpg" alt="Event Decor">
+    </div>
+  </section>
+
+  <!-- Bootstrap Dynamic Card Container (1 Row = 3 Cards on Desktop) -->
+  <section id="events" class="container my-5 reveal">
+    <div class="section-title">
+      <h2 class="theme-gradient-text">Our Event Services</h2>
+      <div class="section-underline"></div>
+    </div>
+    <div class="row g-4" id="cardContainer"></div>
+  </section>
+
+  <!-- Client Testimonials / Reviews Section -->
+  <section id="reviews" class="container testimonials-section reveal">
+    <div class="section-title">
+      <h2 class="theme-gradient-text">Client Testimonials & Reviews</h2>
+      <div class="section-underline"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p>"Everything ran effortlessly from start to finish. Your team handled every detail so we could actually enjoy the event."</p>
+          <small style="color: var(--sky);">— Happy Wedding Host</small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p>"You turned our vision into reality and kept us calm and on track the whole way. Our guests are still talking about how special it felt."</p>
+          <small style="color: var(--green);">— Nikkah & Reception Client</small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p>"Organized, responsive, and dependable. You coordinated vendors, timelines, and last-minute adjustments without missing a beat."</p>
+          <small style="color: var(--purple);">— Corporate & Birthday Client</small>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-4 text-secondary">Event organizers and hosts often share reviews that focus on calm execution, personal warmth, and how smoothly the day came together.</p>
+  </section>
+
+  <!-- Contact / Booking Inquiry Section -->
+  <section id="contact" class="container booking-section reveal">
+    <div class="section-title">
+      <h2 class="theme-gradient-text">Book Your Event</h2>
+      <div class="section-underline"></div>
+    </div>
+
+    <div class="booking-box">
+      <form id="bookingForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone / WhatsApp Number</label>
+            <input type="tel" class="form-control" placeholder="03XX-XXXXXXX" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="example@email.com" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Event Type</label>
+            <select class="form-select" required>
+              <option value="" selected disabled>Select Event Type</option>
+              <option>Birthday Party</option>
+              <option>Engagement Event</option>
+              <option>Nikkah Ceremony</option>
+              <option>Mehandi & Dholki</option>
+              <option>Wedding & Reception</option>
+              <option>Bridal Shower</option>
+              <option>Milad-un-Nabi (ﷺ)</option>
+              <option>Anniversary</option>
+              <option>Graduation Party</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Event Date</label>
+            <input type="date" class="form-control" required>
+          </div>
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-theme px-5 py-2 fs-5">Submit Booking Inquiry</button>
+          </div>
+        </div>
+      </form>
+      <div id="bookingSuccess" class="alert alert-success mt-3 d-none text-center">
+        Thank you! Your booking inquiry has been received by <strong>Gold Shine Event Decor</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <img src="Assests/685566111_18094514231332150_4539418371068601872_n-removebg-preview.png" alt="Gold Shine Logo">
+    <h4 class="theme-gradient-text fw-bold">Gold Shine Event Decor</h4>
+
+    <div class="footer-links my-3">
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="social-icons my-3">
+      <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 30px;"></i>
+      <i class="fa-brands fa-skype" style="color: #38bdf8; font-size: 30px;"></i>
+      <i class="fa-brands fa-facebook-messenger" style="color: #8b5cf6; font-size: 30px;"></i>
+      <i class="fa-brands fa-facebook" style="color: #3b82f6; font-size: 30px;"></i>
+      <i class="fa-brands fa-instagram" style="color: #e879f9; font-size: 30px;"></i>
+    </div>
+
+    <p class="mt-3 mb-0" style="color: var(--silver); font-size: 14px;">
+      © 2026 <span style="color: var(--gold);">Gold Shine Event Decor</span>. All Rights Reserved.
+    </p>
+  </footer>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      const cardsData = [
+        {
+          title: "Birthday Parties Organize",
+          description: "A birthday party is a joyful gathering where friends and family celebrate another year of someone's life.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgYmlF00nMjQgTv7NKAZUpZHhPrBExnmhsHXc56U_TBfIjmBzIOUOSvEE&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Engagement Event Organize",
+          description: "An engagement event is a celebration held after a proposal and before a wedding to mark a couple's commitment to marry and share the news with loved ones.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbquYbFp64Z3BeBL_QfLc1XWtkoRTlSRkVTKa_MioZQw&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Nikkah Ceremony Organize",
+          description: "A Nikkah is the sacred Islamic marriage ceremony and legal contract that officially unites a couple as husband and wife under Islamic law.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUs8YcwiKoJLsv7DgmFn4zFtZh5ckoq_7fJlR0WSoBww&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Mehandi & Dholki Event Organize",
+          description: "Families often host them days or weeks before the wedding, either together or as separate gatherings at home or a venue.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvKbPcKOJESpRsqw8bra9VZSzqFr4vQ91rXOfD4WP_tQ&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Wedding & Reception Event Organize",
+          description: "A wedding reception is a party usually held after the completion of a marriage ceremony as hospitality for those who have attended the wedding.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5F1d4IAzY65yLDEDJXbjDyOGD4RAqHvikedgosmPS2w&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Bridal Shower Event Organize",
+          description: "A bridal shower is a pre-wedding celebration held to honor a bride-to-be with gifts, well wishes, and support before her wedding.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc7FlLcR2JvptKblSg7Vh0EE0IF-nMFI2hNT2Vhj14iQ&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Milad UN Nabi(ﷺ) <br> Event Organize",
+          description: "Eid Milad-un-Nabi ﷺ is an annual Islamic observance commemorating the birth of Prophet Muhammad ﷺ in the lunar month of Rabi' al-Awwal.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9CEMhEabZFob9CUCghgYU80zxEjm4MUa3EqM_Qhvyhg&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Anniversary Event Organize",
+          description: "An anniversary event is a gathering or celebration held to mark the yearly recurrence of a meaningful date or milestone.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5mdcYIgdljQByzSuarOKHDygD_JhxTNgGNtndQvOYoUv3HjIi-itG3ePd&s=10",
+          link: "#contact"
+        },
+        {
+          title: "Graduation Parties Organize",
+          description: "A graduation party is a milestone event that celebrates a student's academic achievement and marks their transition into the next chapter of life.",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbQQbeFNiUwWCzjBtVSe78uBCd-6y_SxBCaZLwlosJ5A&s=10",
+          link: "#contact"
+        }
+      ];
+
+      const $container = $("#cardContainer");
+
+      $.each(cardsData, function (index, item) {
+        const cleanAlt = item.title.replace(/<br\s*\/?>/gi, " ");
+        const cardHTML = `
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card event-card h-100">
+              <div class="img-wrapper">
+                <img src="${item.image}" class="card-img-top" alt="${cleanAlt}" />
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text flex-grow-1">${item.description}</p>
+                <a href="${item.link}" class="btn btn-theme mt-2 align-self-start">Book Event</a>
+              </div>
+            </div>
+          </div>
+        `;
+
+        $container.append(cardHTML);
+      });
+
+      // Booking Form Submit Message
+      $("#bookingForm").on("submit", function (e) {
+        e.preventDefault();
+        $("#bookingSuccess").removeClass("d-none");
+        this.reset();
+      });
+
+      // Scroll Reveal Animation
+      function revealOnScroll() {
+        $(".reveal").each(function () {
+          const windowHeight = $(window).height();
+          const elementTop = $(this).offset().top;
+          const scrollPos = $(window).scrollTop();
+          if (elementTop < scrollPos + windowHeight - 80) {
+            $(this).addClass("active");
+          }
+        });
+      }
+
+      $(window).on("scroll", revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
